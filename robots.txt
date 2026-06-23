@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://greencar-uxd.github.io/career-high/sitemap.xml
