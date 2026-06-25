@@ -176,25 +176,71 @@ ul.bul li .acc{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 .doc-foot{ margin-top:var(--space-8); padding-top:var(--space-4); border-top:1px solid var(--border); font-size:11px; color:var(--text-tertiary); line-height:1.6; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap }
 .doc-foot .ds{ font-family:var(--font-mono) }
 
-/* ---------- Print (A4) ---------- */
+/* ---------- Print (A4) ----------
+   가독성 우선: 코발트 타이포 토큰(--lh-body 1.6 / --lh-relaxed 1.72)에
+   맞춰 본문·행간·문단 간격을 넉넉하게. 압축보다 읽힘을 우선한다. */
 @media print{
-  body{ background:#fff; font-size:9.7pt; line-height:1.46 }
+  body{ background:#fff; font-size:10.4pt; line-height:1.6 }
   .page{ margin:0; max-width:none; border:0; border-radius:0; box-shadow:none; padding:0 }
-  @page{ size:A4; margin:10mm 14mm }
-  .doc-head{ padding-bottom:10px; margin-bottom:4px }
-  .doc-title{ font-size:22pt }
-  .sec{ margin-top:9px }
-  .sec-title{ margin-bottom:7px; padding-bottom:5px }
-  .lead{ line-height:1.55 }
-  .entry{ margin-bottom:8px }
-  .domain{ margin:2px 0 5px }
-  ul.bul{ gap:2px }
-  ul.bul li{ line-height:1.46 }
-  .doc-foot{ margin-top:12px }
+  @page{ size:A4; margin:13mm 16mm }
+
+  /* 헤더 */
+  .doc-head{ padding-bottom:14px; margin-bottom:6px }
+  .doc-title{ font-size:24pt }
+  .doc-eyebrow{ margin-bottom:8px }
+  .doc-sub{ font-size:9.8pt }
+
+  /* 섹션 */
+  .sec{ margin-top:20px }
+  .sec-title{ font-size:11.5pt; margin-bottom:11px; padding-bottom:6px; break-after:avoid }
+
+  /* 소개(리드) — 가장 넉넉하게 */
+  .lead{ font-size:10.4pt; line-height:1.72 }
+
+  /* 칩 */
+  .chips{ gap:7px }
+  .chip{ font-size:9.3pt }
+
+  /* 경력 엔트리 */
+  .entry{ margin-bottom:15px }
+  .entry-head .co{ font-size:11.5pt }
+  .domain{ margin:4px 0 8px }
+  ul.bul{ gap:6px }
+  ul.bul li{ font-size:10pt; line-height:1.6 }
+  ul.bul li::before{ top:8px }
+
+  /* 압축 행 */
+  .row{ margin-bottom:8px }
+  .row .main{ font-size:10.2pt }
+  .subline{ font-size:9.4pt; line-height:1.62 }
+  .twocol{ gap:8px 28px }
+  .note{ font-size:9.6pt; line-height:1.62 }
+
+  /* 경력기술서 */
+  .co{ margin-top:26px }
+  .co-name{ font-size:14pt }
+  .proj{ margin-top:16px }
+  .proj-title{ font-size:10.8pt }
+  .proj-body{ gap:7px }
+  .line{ font-size:10pt; line-height:1.62 }
+  .mini{ margin-top:12px }
+  .mini-item{ font-size:10pt; margin-bottom:7px; line-height:1.6 }
+
+  /* 자기소개서 — 산문이라 행간 넉넉(토큰 relaxed 1.72↑), 항목은 페이지에 걸쳐 흐르게 */
+  .sec-note{ margin:-1px 0 11px }
+  .subhead{ font-size:11pt; margin:13px 0 8px; break-after:avoid }
+  .cl{ font-size:10.4pt; line-height:1.76; margin-bottom:9px; orphans:2; widows:2 }
+  .item{ margin-top:12px }
+  .item-h{ font-size:11.5pt; margin-bottom:8px; break-after:avoid }
+
+  .doc-foot{ margin-top:13px; padding-top:11px }
+
+  /* 페이지 나눔 제어 */
   a{ color:var(--text-link) !important }
   .entry,.row,.edu,.kv,.callout{ break-inside:avoid }
-  .co{ margin-top:20px }
-  .proj,.mini-item,.co-head{ break-inside:avoid }
-  .item{ break-inside:avoid }
-  .subhead{ break-after:avoid }
+  /* 회사(.co)는 길면 페이지에 걸쳐 흐르게 — 회사명 행은 묶고 첫 프로젝트와 붙임 */
+  .co-head,.co-name-row{ break-inside:avoid }
+  .co-head{ break-after:avoid }
+  .proj,.mini-item{ break-inside:avoid }
+  /* 자소서 항목(.item)은 통째 묶지 않고 흐르게 — 제목만 본문과 붙임 */
 }
