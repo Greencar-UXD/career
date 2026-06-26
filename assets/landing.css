@@ -1,0 +1,824 @@
+/* LANDING SEAM REDESIGN ——————————————————————————————————————————
+   THE SEAM: Vertical living stitching line bridging HW (left) ↔ SW (right)
+   Implements synthesized winner direction + grafts from PLEOS BENCH / SPECIMEN
+   Palette: HW=Cast Aluminum #C7CAD0, SW=Screen Black #0A0C10
+   Accent: Cobalt Signal #2D5BFF, Cobalt Glow #5E84FF
+   Typography: Pretendard Variable (양극 운용), Geist Mono (data), Space Grotesk (latin display)
+   ———————————————————————————————————————————————————————————————————— */
+
+/* ROOT TOKENS ———————————————————————————————————————————————— */
+:root {
+  --seam-color: #2D5BFF;
+  --seam-glow: #5E84FF;
+  --hw-bg: #C7CAD0;
+  --hw-dark: #1B1F26;
+  --sw-bg: #0A0C10;
+  --sw-text: #EDEEF0;
+  --text-primary: #1B1E22;
+  --text-secondary: #9FB0CC;
+}
+
+/* SEAM AXIS CONTAINER ———————————————————————————————————— */
+html {
+  --seam-x: 46%;
+}
+
+body {
+  background: linear-gradient(to right, var(--hw-bg) var(--seam-x), var(--sw-bg) var(--seam-x));
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* NAVIGATION (overrides studio.css) ———————————————— */
+.st-nav {
+  background: linear-gradient(to right, var(--hw-bg) var(--seam-x), var(--sw-bg) var(--seam-x));
+  border: none;
+  position: relative;
+}
+
+.st-nav::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--seam-x) - 0.5px);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom,
+    rgba(45, 91, 255, 0.8),
+    rgba(45, 91, 255, 0.3));
+  box-shadow: 0 0 8px rgba(45, 91, 255, 0.4);
+}
+
+.st-nav-in {
+  color: var(--text-primary);
+}
+
+.st-nav-in .st-brand {
+  color: var(--text-primary);
+}
+
+.st-nav-in a {
+  color: var(--text-primary);
+}
+
+.st-nav-in a:hover {
+  color: var(--seam-color);
+}
+
+.st-nav-in .cta {
+  border-color: var(--seam-color);
+  color: var(--seam-color);
+}
+
+/* HIDE MARQUEE ———————————————————————————————————— */
+.marquee {
+  display: none;
+}
+
+/* HERO SECTION (overrides studio.css) ———————————————— */
+.st-hero {
+  background: transparent;
+  padding: 120px 0 60px;
+  border: none;
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.st-hero .st-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 100%;
+  padding: 0 3vw;
+}
+
+.st-hero .kicker {
+  grid-column: 1 / 2;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+/* HERO HEADLINE: 양극 운용 (HW=금속각인, SW=백라이트) */
+.st-hero h1 {
+  grid-column: 1 / 2;
+  margin: 16px 0 0 0;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(48px, 9vw, 128px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--text-primary);
+}
+
+.st-hero h1 em {
+  font-style: normal;
+  background: linear-gradient(to right, transparent calc(var(--seam-x) - 2%), var(--seam-color) calc(var(--seam-x) + 2%), var(--seam-glow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hero-glow 0.4s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+@keyframes hero-glow {
+  from {
+    opacity: 0;
+    text-shadow: none;
+  }
+  to {
+    opacity: 1;
+    text-shadow: 0 0 16px rgba(94, 132, 255, 0.5);
+  }
+}
+
+/* HERO LEAD ———————————————————————————————— */
+.st-hero .lead {
+  grid-column: 1 / 2;
+  grid-row: 3;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.st-hero .lead b {
+  color: var(--seam-color);
+  font-weight: 600;
+}
+
+/* HERO META: Seam-distributed metrics ———————————— */
+.st-hero-meta {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background: rgba(45, 91, 255, 0.08);
+  border-radius: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  border: 1px solid rgba(45, 91, 255, 0.2);
+  line-height: 1.6;
+}
+
+.st-hero-meta .av {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--seam-color);
+  font-weight: 600;
+}
+
+.st-hero-meta .av::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--seam-color);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.st-hero-meta a {
+  color: var(--seam-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--seam-color);
+  transition: all 0.3s ease;
+}
+
+.st-hero-meta a:hover {
+  background: rgba(45, 91, 255, 0.1);
+}
+
+/* SEAM LINE (spans full page) ——————————————— */
+body::after {
+  content: '';
+  position: fixed;
+  left: calc(var(--seam-x) - 0.5px);
+  top: 0;
+  width: 1px;
+  height: 100vh;
+  background: linear-gradient(to bottom,
+    rgba(45, 91, 255, 0.9),
+    rgba(45, 91, 255, 0.5),
+    rgba(45, 91, 255, 0.3));
+  box-shadow:
+    -1px 0 8px rgba(45, 91, 255, 0.4),
+    1px 0 8px rgba(45, 91, 255, 0.4);
+  pointer-events: none;
+  z-index: 10;
+  animation: seam-breathe 6s ease-in-out infinite;
+}
+
+@keyframes seam-breathe {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow:
+      -1px 0 8px rgba(45, 91, 255, 0.4),
+      1px 0 8px rgba(45, 91, 255, 0.4);
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      -1px 0 16px rgba(45, 91, 255, 0.8),
+      1px 0 16px rgba(45, 91, 255, 0.8);
+  }
+}
+
+/* METRICS (overrides studio.css) —————————— */
+.st-metrics-wrap {
+  background: transparent;
+  border: none;
+  padding: 60px 0;
+}
+
+.st-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 100%;
+  padding: 0 3vw;
+}
+
+.st-metrics .m {
+  padding: 24px;
+  border-radius: 8px;
+  background: rgba(45, 91, 255, 0.06);
+  border: 1px solid rgba(45, 91, 255, 0.15);
+  text-align: left;
+}
+
+.st-metrics .m:nth-child(1),
+.st-metrics .m:nth-child(2) {
+  grid-column: 1 / 2;
+}
+
+.st-metrics .m:nth-child(3),
+.st-metrics .m:nth-child(4) {
+  grid-column: 2 / 3;
+}
+
+.st-metrics .n {
+  font-family: 'Geist Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--seam-color);
+  margin-bottom: 8px;
+}
+
+.st-metrics .u {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.st-metrics .l {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* WORK SECTION (overrides studio.css) ——— */
+.sec#work {
+  padding: 80px 0;
+  background: transparent;
+  border: none;
+}
+
+.sec#work .sec-head {
+  max-width: 100%;
+  padding: 0 3vw;
+  margin-bottom: 60px;
+}
+
+.sec#work .sec-head h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.sec#work .sec-head p {
+  color: var(--text-secondary);
+  max-width: 600px;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 100%;
+  padding: 0 3vw;
+}
+
+.work-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(45, 91, 255, 0.15);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.work-row:last-child {
+  border-bottom: none;
+}
+
+.work-row:hover {
+  background: rgba(45, 91, 255, 0.06);
+}
+
+.work-row .wn {
+  display: none;
+}
+
+.work-row .wt h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.work-row .wt .role {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.work-row .wtags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.work-row .wtags span {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(45, 91, 255, 0.12);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--seam-color);
+  font-weight: 600;
+}
+
+.work-row .wyear {
+  text-align: right;
+  font-size: 12px;
+  font-family: 'Geist Mono', monospace;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* MORE PROJECTS ————————————————— */
+.sec#more {
+  padding: 80px 0;
+  background: transparent;
+  border: none;
+}
+
+.sec#more .sec-head {
+  max-width: 100%;
+  padding: 0 3vw;
+  margin-bottom: 60px;
+}
+
+.arch {
+  max-width: 100%;
+  padding: 0 3vw;
+}
+
+.arch-grp {
+  margin-bottom: 40px;
+}
+
+.arch-grp .co {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.arch-grp .co small {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  text-transform: none;
+}
+
+.arch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.arch-list a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: rgba(45, 91, 255, 0.04);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(45, 91, 255, 0.1);
+}
+
+.arch-list a:hover {
+  background: rgba(45, 91, 255, 0.12);
+  border-color: rgba(45, 91, 255, 0.25);
+}
+
+.arch-list a .t {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.arch-list a .yr {
+  font-size: 11px;
+  font-family: 'Geist Mono', monospace;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* CAPABILITIES (remove 01-06 numbers) ——— */
+.sec#capabilities {
+  padding: 80px 0;
+  background: transparent;
+  border: none;
+}
+
+.sec#capabilities .sec-head {
+  max-width: 100%;
+  padding: 0 3vw;
+  margin-bottom: 60px;
+}
+
+.caps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 100%;
+  padding: 0 3vw;
+}
+
+.cap {
+  padding: 24px;
+  border-radius: 8px;
+  background: rgba(45, 91, 255, 0.06);
+  border: 1px solid rgba(45, 91, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.cap:hover {
+  background: rgba(45, 91, 255, 0.12);
+  border-color: rgba(45, 91, 255, 0.3);
+}
+
+.cap .no {
+  display: none;
+}
+
+.cap h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.cap p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ABOUT —————————————————————————— */
+.sec#about {
+  padding: 80px 0;
+  background: transparent;
+  border: none;
+}
+
+.about {
+  max-width: 900px;
+  padding: 0 3vw;
+  margin: 0 auto;
+}
+
+.about .lede {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.about .lede b {
+  color: var(--seam-color);
+}
+
+.about .body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about .body p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.about .body b {
+  color: var(--seam-color);
+}
+
+.about-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(45, 91, 255, 0.2);
+}
+
+.about-list .li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about-list .li .k {
+  font-size: 11px;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--seam-color);
+}
+
+.about-list .li .v {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* APPROACH (remove STEP 01-03 numbers) —— */
+.sec#approach {
+  padding: 80px 0;
+  background: transparent;
+  border: none;
+}
+
+.sec#approach .sec-head {
+  max-width: 100%;
+  padding: 0 3vw;
+  margin-bottom: 60px;
+}
+
+.steps3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 100%;
+  padding: 0 3vw;
+}
+
+.steps3 .s {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.steps3 .s .no {
+  display: none;
+}
+
+.steps3 .s h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.steps3 .s p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.steps3 .s .bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--seam-color);
+  border-radius: 1px;
+}
+
+/* CTA SECTION (overrides: remove headline repeat) — */
+.cta-sec {
+  padding: 100px 0;
+  background: transparent;
+  border: none;
+  text-align: center;
+}
+
+.cta-sec .st-wrap {
+  max-width: 100%;
+  padding: 0 3vw;
+}
+
+.cta-sec .kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cta-sec h2 {
+  display: none;
+}
+
+.cta-sec .mail {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Geist Mono', monospace;
+  color: var(--seam-color);
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--seam-color);
+  transition: all 0.3s ease;
+  margin: 24px 0;
+}
+
+.cta-sec .mail:hover {
+  color: var(--seam-glow);
+  border-color: var(--seam-glow);
+  text-shadow: 0 0 12px rgba(94, 132, 255, 0.3);
+}
+
+.cta-sec .cta-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+/* FOOTER ——————————————————————— */
+.st-foot {
+  background: linear-gradient(to right, var(--hw-bg) var(--seam-x), var(--sw-bg) var(--seam-x));
+  border-top: 1px solid rgba(45, 91, 255, 0.2);
+  padding: 40px 0;
+}
+
+.st-foot .st-wrap {
+  max-width: 100%;
+  padding: 0 3vw;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.st-foot .ds {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 500;
+}
+
+/* MOBILE RESPONSIVE ————————————— */
+@media (max-width: 1024px) {
+  html {
+    --seam-x: 50%;
+  }
+
+  .st-hero .st-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .st-hero .kicker {
+    grid-column: 1;
+  }
+
+  .st-hero h1 {
+    grid-column: 1;
+  }
+
+  .st-hero .lead {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .st-hero-meta {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .st-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .st-metrics .m:nth-child(1),
+  .st-metrics .m:nth-child(2),
+  .st-metrics .m:nth-child(3),
+  .st-metrics .m:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .work-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .work-row .wyear {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    --seam-x: 100%;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .st-nav::after {
+    display: none;
+  }
+
+  .st-hero {
+    padding: 80px 0 40px;
+  }
+
+  .st-hero h1 {
+    font-size: clamp(36px, 8vw, 72px);
+  }
+
+  .st-metrics {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 3vw;
+  }
+
+  .caps {
+    grid-template-columns: 1fr;
+  }
+
+  .steps3 {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-sec .mail {
+    font-size: 24px;
+  }
+}
+
+/* NO-MOTION ————————————————— */
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+    opacity: 0.6;
+  }
+
+  .st-hero h1 em {
+    animation: none;
+    opacity: 1;
+    -webkit-text-fill-color: unset;
+  }
+
+  .st-hero-meta .av::before {
+    animation: none;
+  }
+}
