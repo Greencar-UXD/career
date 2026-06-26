@@ -216,3 +216,11 @@ img{ display:block; max-width:100% }
 .marquee .it .sep{ color:var(--accent); padding:0 26px; font-weight:var(--fw-regular) }
 @keyframes mq{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
 @media(prefers-reduced-motion:reduce){ .marquee-track{ animation:none } }
+
+/* ---------- Focus ring (Cobalt canon) ----------
+   Canon requires a visible 2px cobalt ring + 2px offset on all interactive
+   elements. It previously lived only in landing.css, which the case pages do
+   not load — so define it here in studio.css (loaded by every case page). */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+  outline:2px solid var(--accent, #2d5bff); outline-offset:2px; border-radius:4px;
+}
