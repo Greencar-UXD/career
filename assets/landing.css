@@ -18,10 +18,10 @@
   --shadow:    0 1px 2px rgba(16,18,29,0.05), 0 6px 20px rgba(16,18,29,0.06);
   --shadow-hi: 0 4px 8px rgba(16,18,29,0.05), 0 20px 40px -16px rgba(16,18,29,0.18);
   --sans: 'Pretendard Variable','Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'Geist Mono', ui-monospace, monospace;
+  --mono: var(--sans);
 }
 
-body { background: var(--bg); color: var(--ink); }
+body { background: var(--bg); color: var(--ink); font-variant-numeric: tabular-nums; }
 .st-wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
 
 /* 키보드 포커스 — 코발트 테마 일치(브라우저 기본 검정 outline 대체) */

@@ -43,7 +43,7 @@ tools/genpdf.py · tools/setup.sh    ← PDF 생성 파이프라인
 ## 3. 디자인 시스템 — Cobalt — Mono
 - 출처: 본인 레포 `Greencar-UXD/design-system` (브랜치 feat/restructure-and-showcase).
 - 모노크롬 그레이 + **코발트 액센트 #2d5bff**(절제), 본문/주요액션은 잉크 #14171b.
-- 폰트: **Pretendard**(KR+EN) + **Geist Mono**(숫자·기간·DOI). 4px 그리드. 라이트.
+- 폰트: **Pretendard** 단일(KR+EN). 숫자·기간·DOI는 같은 패밀리 + `tabular-nums`. 4px 그리드. 라이트.
 - 4개 문서가 `assets/cobalt-doc.css` 토큰을 공유 → 통일감. 수정은 이 파일에서.
 - PDF는 사용 글자만 서브셋 임베드(`tools/genpdf.py`) → 85~180KB 경량. (500→400·600→700 매핑)
 

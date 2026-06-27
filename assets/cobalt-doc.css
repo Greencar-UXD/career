@@ -26,7 +26,7 @@
   /* ---- Type ---- */
   --font-text:"Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif;
   --font-display:var(--font-text);
-  --font-mono:"Geist Mono",ui-monospace,"SFMono-Regular","JetBrains Mono","D2Coding",monospace;
+  --font-mono:var(--font-text);
   --fw-regular:400; --fw-medium:500; --fw-semibold:600; --fw-bold:700;
   --ls-tighter:-0.035em; --ls-tight:-0.02em; --ls-snug:-0.01em; --ls-caps:0.13em;
 
@@ -52,7 +52,7 @@
 html{ -webkit-text-size-adjust:100% }
 body{
   background:var(--surface-page); color:var(--text-primary);
-  font-family:var(--font-text); font-size:16px; line-height:1.6;
+  font-family:var(--font-text); font-size:16px; line-height:1.6; font-variant-numeric:tabular-nums;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
 

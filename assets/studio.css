@@ -6,7 +6,7 @@
 
 :root{ --st-max:1200px; --st-pad:32px; }
 html{ scroll-behavior:smooth }
-body{ background:var(--gray-0); color:var(--text-primary); }
+body{ background:var(--gray-0); color:var(--text-primary); font-variant-numeric:tabular-nums; }
 ::selection{ background:var(--cobalt-100); color:var(--gray-900) }
 .st-wrap{ max-width:var(--st-max); margin:0 auto; padding:0 var(--st-pad) }
 a{ color:inherit; text-decoration:none }
