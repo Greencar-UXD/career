@@ -252,7 +252,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .reveal.in { opacity: 1; transform: none; }
 
 /* ── RESPONSIVE ──────────────────────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .st-wrap { padding: 0 22px; }
   .st-metrics { grid-template-columns: repeat(2,1fr); gap: 14px; padding: 0 22px; }
   .caps { grid-template-columns: 1fr; }
@@ -263,7 +263,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   .work-row .wtags, .work-row .wyear { grid-column: 2; }
   .sec { padding: 64px 0; }
 }
-@media (max-width: 520px) {
+@media (max-width: 480px) {
   /* kicker: 좁은 화면에선 pill 배지가 두 줄로 늘어나 어색 → 평문 라벨로 */
   .st-hero .kicker {
     display: block; background: transparent; padding: 0;
