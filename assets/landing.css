@@ -6,17 +6,17 @@
 
 :root {
   --bg:        #FFFFFF;
-  --bg-alt:    #F5F7FB;   /* 섹션 교차 */
+  --bg-alt:    #f7f8f9;   /* 섹션 교차 — canon --gray-50 */
   --card:      #FFFFFF;
-  --ink:       #1B2430;
-  --ink-mid:   #46505E;
-  --ink-dim:   #6B7787;
+  --ink:       #14171b;   /* canon --gray-900 (was #1B2430) */
+  --ink-mid:   #4d535d;   /* canon --gray-600 (was #46505E) */
+  --ink-dim:   #6b727d;   /* canon --gray-500 (was #6B7787) */
   --cobalt:    #2D5BFF;
-  --cobalt-deep: #1E40D8;
+  --cobalt-deep: #2447e0; /* canon --cobalt-600 (was #1E40D8) */
   --cobalt-soft: #EEF2FF;
-  --line:      #E4E8EF;
-  --shadow:    0 1px 2px rgba(27,36,48,0.04), 0 6px 20px rgba(27,36,48,0.06);
-  --shadow-hi: 0 2px 4px rgba(27,36,48,0.05), 0 14px 36px rgba(45,91,255,0.12);
+  --line:      #dde0e5;   /* canon --gray-200 (was #E4E8EF) */
+  --shadow:    0 1px 2px rgba(16,18,29,0.05), 0 6px 20px rgba(16,18,29,0.06);
+  --shadow-hi: 0 4px 8px rgba(16,18,29,0.05), 0 20px 40px -16px rgba(16,18,29,0.18);
   --sans: 'Pretendard Variable','Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: 'Geist Mono', ui-monospace, monospace;
 }
@@ -54,7 +54,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 
 /* ── HERO — 명확, 중앙 컨테이너 ──────────────────────── */
 .st-hero {
-  background: linear-gradient(180deg, var(--cobalt-soft) 0%, var(--bg) 70%);
+  background: var(--cobalt-soft);   /* flat accent-subtle — canon bans gradients */
   border: none; border-bottom: 1px solid var(--line);
   padding: 92px 0 80px;
 }
@@ -224,7 +224,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 
 /* ── CTA — 코발트 블록, 중앙 ─────────────────────────── */
 .cta-sec {
-  background: var(--cobalt);
+  background: var(--ink);   /* ink band — canon: don't flood a screen with accent */
   border: none; padding: 96px 0; text-align: center;
 }
 .cta-sec .st-wrap { }
@@ -237,9 +237,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   font-family: var(--sans); font-size: clamp(20px, 2.6vw, 30px); font-weight: 700;
   color: var(--cobalt); background: #fff; text-decoration: none;
   padding: 14px 30px; border-radius: 12px; transition: transform .2s, box-shadow .2s;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+  box-shadow: 0 8px 24px rgba(16,18,29,0.16);
 }
-.cta-sec .mail:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.22); }
+.cta-sec .mail:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(16,18,29,0.22); }
 .cta-sec .cta-sub { margin-top: 22px; font-size: 13.5px; color: rgba(255,255,255,0.78); }
 
 /* ── FOOTER ──────────────────────────────────────────── */
