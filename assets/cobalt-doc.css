@@ -52,7 +52,7 @@
 html{ -webkit-text-size-adjust:100% }
 body{
   background:var(--surface-page); color:var(--text-primary);
-  font-family:var(--font-text); font-size:15px; line-height:1.6;
+  font-family:var(--font-text); font-size:16px; line-height:1.6;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
 
@@ -83,33 +83,33 @@ body{
 }
 .sec-title .en{ font-weight:var(--fw-medium); color:var(--text-tertiary); font-size:11px; letter-spacing:var(--ls-caps); text-transform:uppercase; margin-left:7px }
 
-.lead{ font-size:14.5px; color:var(--gray-700); line-height:1.75 }
+.lead{ font-size:14px; color:var(--gray-700); line-height:1.75 }
 .lead b{ color:var(--text-primary); font-weight:var(--fw-semibold) }
 .lead .acc{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 
 /* ---------- Chips ---------- */
 .chips{ display:flex; flex-wrap:wrap; gap:7px }
-.chip{ font-size:12.5px; font-weight:var(--fw-medium); color:var(--gray-700); background:var(--surface-sunken); padding:6px 13px; border-radius:var(--radius-pill) }
+.chip{ font-size:12px; font-weight:var(--fw-medium); color:var(--gray-700); background:var(--surface-sunken); padding:6px 13px; border-radius:var(--radius-pill) }
 .chip.acc{ color:var(--text-accent); background:var(--surface-accent-subtle) }
 
 /* ---------- Experience entries ---------- */
 .entry{ margin-bottom:17px; break-inside:avoid }
 .entry:last-child{ margin-bottom:0 }
 .entry-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px }
-.entry-head .co{ font-size:15.5px; font-weight:var(--fw-bold); color:var(--text-primary) }
-.entry-head .ttl{ font-size:13.5px; font-weight:var(--fw-medium); color:var(--text-secondary) }
+.entry-head .co{ font-size:16px; font-weight:var(--fw-bold); color:var(--text-primary) }
+.entry-head .ttl{ font-size:14px; font-weight:var(--fw-medium); color:var(--text-secondary) }
 .entry-head .period{ font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary); white-space:nowrap; flex-shrink:0 }
-.domain{ font-size:12.5px; color:var(--text-tertiary); margin:3px 0 7px }
+.domain{ font-size:12px; color:var(--text-tertiary); margin:3px 0 7px }
 
 ul.bul{ list-style:none; display:flex; flex-direction:column; gap:4px }
-ul.bul li{ position:relative; padding-left:14px; font-size:13.5px; color:var(--gray-700); line-height:1.62 }
+ul.bul li{ position:relative; padding-left:14px; font-size:14px; color:var(--gray-700); line-height:1.62 }
 ul.bul li::before{ content:""; position:absolute; left:1px; top:9px; width:4px; height:4px; border-radius:50%; background:var(--gray-300) }
 ul.bul li .hl{ color:var(--text-primary); font-weight:var(--fw-semibold) }
 ul.bul li .acc{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 .num{ font-family:var(--font-mono); font-weight:var(--fw-medium) }
 
 /* ---------- Key-value rows (career / detail) ---------- */
-.kv{ display:flex; gap:12px; margin-bottom:7px; font-size:13.5px; line-height:1.6 }
+.kv{ display:flex; gap:12px; margin-bottom:7px; font-size:14px; line-height:1.6 }
 .kv .k{ flex-shrink:0; width:54px; font-size:11px; font-weight:var(--fw-bold); letter-spacing:.04em; color:var(--accent); text-transform:uppercase; padding-top:3px }
 .kv .v{ color:var(--gray-700) }
 .kv .v b{ color:var(--text-primary); font-weight:var(--fw-semibold) }
@@ -119,10 +119,10 @@ ul.bul li .acc{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 .row:last-child{ margin-bottom:0 }
 .row .main{ font-size:14px; color:var(--gray-800) }
 .row .main b{ font-weight:var(--fw-bold); color:var(--text-primary) }
-.row .sub{ font-size:12.5px; color:var(--text-tertiary) }
+.row .sub{ font-size:12px; color:var(--text-tertiary) }
 .row .period{ font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary); white-space:nowrap; flex-shrink:0 }
-.subline{ font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin:2px 0 0 0 }
-.subline .mono{ font-family:var(--font-mono); font-size:11.5px; color:var(--text-tertiary) }
+.subline{ font-size:12px; color:var(--text-secondary); line-height:1.6; margin:2px 0 0 0 }
+.subline .mono{ font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary) }
 .subline a{ color:var(--text-link); text-decoration:none; font-weight:var(--fw-semibold) }
 
 .note{ font-size:13px; color:var(--gray-700); line-height:1.6 }
@@ -131,7 +131,7 @@ ul.bul li .acc{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 .twocol{ display:grid; grid-template-columns:1fr 1fr; gap:8px 28px }
 
 /* ---------- Callout (accent box) ---------- */
-.callout{ background:var(--surface-accent-subtle); border:1px solid var(--cobalt-100); border-radius:var(--radius-md); padding:14px 16px; font-size:13.5px; color:var(--gray-700); line-height:1.65 }
+.callout{ background:var(--surface-accent-subtle); border:1px solid var(--cobalt-100); border-radius:var(--radius-md); padding:14px 16px; font-size:14px; color:var(--gray-700); line-height:1.65 }
 .callout b{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 
 /* ---------- Career / detail components (경력기술서·자기소개서) ---------- */
@@ -141,40 +141,48 @@ ul.bul li .acc{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 .co-name{ font-size:18px; font-weight:var(--fw-bold); color:var(--text-primary); letter-spacing:var(--ls-tight) }
 .co-role{ font-size:13px; color:var(--text-secondary); font-weight:var(--fw-medium) }
 .co-period{ font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary); white-space:nowrap; flex-shrink:0 }
-.co-desc{ font-size:12.5px; color:var(--text-tertiary); margin-top:7px }
+.co-desc{ font-size:12px; color:var(--text-tertiary); margin-top:7px }
 
 .proj{ border-left:2px solid var(--border); padding:2px 0 2px 16px; margin-top:15px; break-inside:avoid }
 .proj-top{ display:flex; align-items:baseline; gap:9px; flex-wrap:wrap }
-.proj-title{ font-size:14.5px; font-weight:var(--fw-bold); color:var(--text-primary) }
-.badge{ font-family:var(--font-mono); font-size:10.5px; font-weight:var(--fw-medium); color:var(--cobalt-600); background:var(--surface-accent-subtle); padding:2px 8px; border-radius:var(--radius-pill); white-space:nowrap }
-.proj-period{ font-family:var(--font-mono); font-size:11.5px; color:var(--text-tertiary) }
+.proj-title{ font-size:14px; font-weight:var(--fw-bold); color:var(--text-primary) }
+.badge{ font-family:var(--font-mono); font-size:10px; font-weight:var(--fw-medium); color:var(--cobalt-600); background:var(--surface-accent-subtle); padding:2px 8px; border-radius:var(--radius-pill); white-space:nowrap }
+.proj-period{ font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary) }
 .proj-body{ margin-top:7px; display:flex; flex-direction:column; gap:6px }
-.line{ display:flex; gap:9px; font-size:13.5px; line-height:1.6 }
+.line{ display:flex; gap:9px; font-size:14px; line-height:1.6 }
 .line .k{ flex-shrink:0; width:40px; font-size:11px; font-weight:var(--fw-bold); letter-spacing:.04em; color:var(--accent); padding-top:3px; text-transform:uppercase }
 .line .v{ color:var(--gray-700) }
 .line .v b{ color:var(--text-primary); font-weight:var(--fw-semibold) }
 .line .v .acc{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 
 .mini{ margin-top:11px; padding-left:16px; border-left:2px solid var(--border) }
-.mini-item{ display:flex; gap:10px; align-items:baseline; font-size:13.5px; margin-bottom:5px; line-height:1.55 }
+.mini-item{ display:flex; gap:10px; align-items:baseline; font-size:14px; margin-bottom:5px; line-height:1.55 }
 .mini-item .p{ font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); white-space:nowrap; flex-shrink:0; min-width:118px }
 .mini-item .t{ color:var(--gray-700) }
 .mini-item .t b{ color:var(--text-primary); font-weight:var(--fw-semibold) }
 
 /* ---------- Cover letter (자기소개서) ---------- */
 .sec-note{ font-size:12px; color:var(--text-tertiary); margin:-2px 0 14px }
-.subhead{ font-size:14.5px; font-weight:var(--fw-bold); color:var(--text-primary); margin:18px 0 8px }
+.subhead{ font-size:14px; font-weight:var(--fw-bold); color:var(--text-primary); margin:18px 0 8px }
 .subhead::before{ content:""; display:inline-block; width:14px; height:2px; background:var(--accent); vertical-align:middle; margin-right:9px; transform:translateY(-3px) }
 .cl{ font-size:14px; color:var(--gray-700); line-height:1.85; margin-bottom:11px }
 .cl b{ color:var(--text-primary); font-weight:var(--fw-semibold) }
 .cl .acc{ color:var(--text-accent); font-weight:var(--fw-semibold) }
 .item{ margin-top:17px; break-inside:avoid }
-.item-h{ font-size:15px; font-weight:var(--fw-bold); color:var(--text-primary); margin-bottom:7px }
+.item-h{ font-size:16px; font-weight:var(--fw-bold); color:var(--text-primary); margin-bottom:7px }
 .item-h .no{ font-family:var(--font-mono); font-size:13px; color:var(--cobalt-600); margin-right:9px }
 
 /* ---------- Footer ---------- */
 .doc-foot{ margin-top:var(--space-8); padding-top:var(--space-4); border-top:1px solid var(--border); font-size:11px; color:var(--text-tertiary); line-height:1.6; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap }
 .doc-foot .ds{ font-family:var(--font-mono) }
+
+/* ---------- Mobile reflow (phones) ----------
+   문서는 max-width:840px로 줄지만 56/60px 측면 패딩은 360px 화면에서 과해
+   본문 폭이 좁아진다. 폰에서 거터를 줄이고 2단 그리드를 단으로 편다. */
+@media (max-width:600px){
+  .page{ padding:24px 16px 32px; margin:16px auto }
+  .twocol{ grid-template-columns:1fr }
+}
 
 /* ---------- Print (A4) ----------
    가독성 우선: 코발트 타이포 토큰(--lh-body 1.6 / --lh-relaxed 1.72)에

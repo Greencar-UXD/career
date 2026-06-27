@@ -68,7 +68,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .st-hero h1 {
   font-family: var(--sans);
   font-size: clamp(40px, 6vw, 76px);
-  font-weight: 760;
+  font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.06;
   color: var(--ink);
@@ -88,14 +88,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .st-hero-meta .av,
 .st-hero-meta a,
 .st-hero-meta span {
-  font-size: 13.5px; color: var(--ink-mid);
+  font-size: 14px; color: var(--ink-mid);
   background: var(--card); border: 1px solid var(--line); border-radius: 8px;
   padding: 8px 14px;
 }
 .st-hero-meta .av { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 500; border-color: var(--cobalt); }
 .st-hero-meta .av::before {
   content: ''; width: 8px; height: 8px; border-radius: 50%;
-  background: #22C55E; box-shadow: 0 0 0 3px rgba(34,197,94,0.18);
+  background: #0fa968; box-shadow: 0 0 0 3px rgba(15,169,104,0.18);
 }
 .st-hero-meta a { color: var(--cobalt); text-decoration: none; font-weight: 600; }
 .st-hero-meta a:hover { background: var(--cobalt-soft); }
@@ -108,26 +108,26 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 .st-metrics .m {
   text-align: left; padding: 26px 24px;
-  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
   box-shadow: var(--shadow);
 }
 .st-metrics .n {
-  font-family: var(--sans); font-size: 40px; font-weight: 740;
+  font-family: var(--sans); font-size: 40px; font-weight: 700;
   letter-spacing: -0.035em; line-height: 1; color: var(--cobalt); margin-bottom: 10px;
 }
 .st-metrics .u { font-size: 18px; font-weight: 600; margin-left: 2px; color: var(--cobalt); }
-.st-metrics .l { font-size: 12.5px; line-height: 1.55; color: var(--ink-dim); }
+.st-metrics .l { font-size: 12px; line-height: 1.55; color: var(--ink-dim); }
 
 /* ── SECTION COMMON ──────────────────────────────────── */
 .sec { background: var(--bg); border: none; padding: 88px 0; }
 .sec#more, .sec#about { background: var(--bg-alt); }
 .sec-head { margin-bottom: 48px; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
 .sec-head h2 {
-  font-family: var(--sans); font-size: clamp(28px, 3.6vw, 40px); font-weight: 740;
+  font-family: var(--sans); font-size: clamp(28px, 3.6vw, 40px); font-weight: 700;
   letter-spacing: -0.03em; line-height: 1.12; color: var(--ink); margin: 0 0 14px;
   word-break: keep-all;
 }
-.sec-head p { color: var(--ink-mid); font-size: 15.5px; line-height: 1.62; margin: 0 auto; }
+.sec-head p { color: var(--ink-mid); font-size: 16px; line-height: 1.62; margin: 0 auto; }
 
 /* ── WORK — 카드 리스트 ──────────────────────────────── */
 .work { display: grid; gap: 14px; }
@@ -136,7 +136,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   grid-template-columns: auto minmax(0,2.4fr) minmax(0,1.3fr) auto;
   gap: 24px; align-items: center;
   padding: 24px 26px;
-  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
   box-shadow: var(--shadow);
   text-decoration: none;
   transition: box-shadow .22s, transform .22s, border-color .22s;
@@ -144,24 +144,24 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .work-row:hover { box-shadow: var(--shadow-hi); transform: translateY(-2px); border-color: rgba(45,91,255,0.3); }
 .work-row .wn {
   display: grid; place-items: center;
-  width: 38px; height: 38px; border-radius: 9px;
+  width: 38px; height: 38px; border-radius: 8px;
   background: var(--cobalt-soft); color: var(--cobalt);
   font-family: var(--mono); font-size: 13px; font-weight: 600;
 }
-.work-row .wt h3 { font-size: 17px; font-weight: 660; color: var(--ink); margin: 0 0 5px; letter-spacing: -0.01em; }
-.work-row .wt .role { font-size: 12.5px; color: var(--ink-dim); }
+.work-row .wt h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin: 0 0 5px; letter-spacing: -0.01em; }
+.work-row .wt .role { font-size: 12px; color: var(--ink-dim); }
 .work-row .wtags { display: flex; gap: 7px; flex-wrap: wrap; }
 .work-row .wtags span {
   font-size: 11px; font-weight: 600; color: var(--cobalt);
-  background: var(--cobalt-soft); padding: 4px 10px; border-radius: 6px;
+  background: var(--cobalt-soft); padding: 4px 10px; border-radius: 8px;
 }
-.work-row .wyear { font-family: var(--mono); font-size: 12.5px; color: var(--ink-dim); white-space: nowrap; }
+.work-row .wyear { font-family: var(--mono); font-size: 12px; color: var(--ink-dim); white-space: nowrap; }
 
 /* ── MORE PROJECTS ───────────────────────────────────── */
 .arch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .arch-grp {
   display: block;
-  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
   padding: 24px; box-shadow: var(--shadow);
 }
 .arch-grp .co { display: block; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
@@ -172,33 +172,33 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   padding: 11px 12px; border-radius: 8px; text-decoration: none; transition: background .18s;
 }
 .arch-list a:hover { background: var(--cobalt-soft); }
-.arch-list a .t { font-size: 13.5px; color: var(--ink-mid); font-weight: 500; line-height: 1.45; word-break: keep-all; }
+.arch-list a .t { font-size: 14px; color: var(--ink-mid); font-weight: 500; line-height: 1.45; word-break: keep-all; }
 .arch-list a:hover .t { color: var(--cobalt); }
 .arch-list a .yr { font-family: var(--mono); font-size: 11px; color: var(--ink-dim); white-space: nowrap; }
 
 /* ── CAPABILITIES — 카드 그리드 ──────────────────────── */
 .caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .cap {
-  padding: 26px; background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 26px; background: var(--card); border: 1px solid var(--line); border-radius: 16px;
   box-shadow: var(--shadow); transition: box-shadow .22s, transform .22s, border-color .22s;
 }
 .cap:hover { box-shadow: var(--shadow-hi); transform: translateY(-3px); border-color: rgba(45,91,255,0.3); }
 .cap .no {
   display: grid; place-items: center;
-  width: 40px; height: 40px; border-radius: 10px;
+  width: 40px; height: 40px; border-radius: 12px;
   background: var(--cobalt-soft); color: var(--cobalt);
   font-family: var(--mono); font-size: 13px; font-weight: 600; margin-bottom: 16px;
 }
 .cap h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin: 0 0 9px; }
-.cap p { font-size: 13.5px; line-height: 1.62; color: var(--ink-mid); margin: 0; }
+.cap p { font-size: 14px; line-height: 1.62; color: var(--ink-mid); margin: 0; }
 
 /* ── ABOUT ───────────────────────────────────────────── */
 .about {
   display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start;
-  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
   padding: 44px; box-shadow: var(--shadow);
 }
-.about .lede { font-family: var(--sans); font-size: 21px; font-weight: 640; line-height: 1.48; color: var(--ink); letter-spacing: -0.015em; }
+.about .lede { font-family: var(--sans); font-size: 21px; font-weight: 600; line-height: 1.48; color: var(--ink); letter-spacing: -0.015em; }
 .about .lede b { color: var(--cobalt); }
 .about .body { display: flex; flex-direction: column; gap: 16px; }
 .about .body p { font-size: 15px; line-height: 1.74; color: var(--ink-mid); margin: 0; }
@@ -206,20 +206,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .about-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 12px; padding-top: 24px; border-top: 1px solid var(--line); }
 .about-list .li {
   display: flex; flex-direction: column; gap: 5px;
-  background: var(--bg-alt); border-radius: 10px; padding: 14px 16px;
+  background: var(--bg-alt); border-radius: 12px; padding: 14px 16px;
 }
-.about-list .li .k { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cobalt); }
+.about-list .li .k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cobalt); }
 .about-list .li .v { font-size: 13px; color: var(--ink); font-weight: 500; line-height: 1.5; }
 
 /* ── APPROACH — 번호 카드 ────────────────────────────── */
 .steps3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .steps3 .s {
   position: relative; padding: 28px;
-  background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow);
 }
-.steps3 .s .no { display: inline-block; font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; color: #fff; background: var(--cobalt); padding: 4px 10px; border-radius: 6px; margin-bottom: 16px; }
+.steps3 .s .no { display: inline-block; font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #fff; background: var(--cobalt); padding: 4px 10px; border-radius: 8px; margin-bottom: 16px; }
 .steps3 .s h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin: 0 0 10px; }
-.steps3 .s p { font-size: 13.5px; line-height: 1.62; color: var(--ink-mid); margin: 0; }
+.steps3 .s p { font-size: 14px; line-height: 1.62; color: var(--ink-mid); margin: 0; }
 .steps3 .s .bar { display: none; }
 
 /* ── CTA — 코발트 블록, 중앙 ─────────────────────────── */
@@ -228,9 +228,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   border: none; padding: 96px 0; text-align: center;
 }
 .cta-sec .st-wrap { }
-.cta-sec .kicker { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 20px; }
+.cta-sec .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 20px; }
 .cta-sec .kicker .i { color: rgba(255,255,255,0.5); margin: 0 8px; }
-.cta-sec h2 { font-family: var(--sans); font-size: clamp(32px, 4.6vw, 56px); font-weight: 760; letter-spacing: -0.035em; line-height: 1.06; color: #fff; margin: 0 0 6px; }
+.cta-sec h2 { font-family: var(--sans); font-size: clamp(32px, 4.6vw, 56px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.06; color: #fff; margin: 0 0 6px; }
 .cta-sec h2 em { font-style: normal; color: #fff; border-bottom: 3px solid rgba(255,255,255,0.5); padding-bottom: 2px; }
 .cta-sec .mail {
   display: inline-block; margin-top: 28px;
@@ -240,11 +240,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   box-shadow: 0 8px 24px rgba(16,18,29,0.16);
 }
 .cta-sec .mail:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(16,18,29,0.22); }
-.cta-sec .cta-sub { margin-top: 22px; font-size: 13.5px; color: rgba(255,255,255,0.78); }
+.cta-sec .cta-sub { margin-top: 22px; font-size: 14px; color: rgba(255,255,255,0.78); }
 
 /* ── FOOTER ──────────────────────────────────────────── */
 .st-foot { background: var(--ink); border: none; padding: 36px 0; }
-.st-foot .st-wrap { font-size: 12.5px; color: rgba(255,255,255,0.6); }
+.st-foot .st-wrap { font-size: 12px; color: rgba(255,255,255,0.6); }
 .st-foot .ds { font-family: var(--mono); }
 
 /* ── REVEAL ──────────────────────────────────────────── */
@@ -267,7 +267,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   /* kicker: 좁은 화면에선 pill 배지가 두 줄로 늘어나 어색 → 평문 라벨로 */
   .st-hero .kicker {
     display: block; background: transparent; padding: 0;
-    border-radius: 0; color: var(--cobalt); font-size: 11.5px; line-height: 1.5;
+    border-radius: 0; color: var(--cobalt); font-size: 12px; line-height: 1.5;
   }
   .st-hero { padding-top: 76px; }
   .st-metrics { grid-template-columns: 1fr 1fr; }
